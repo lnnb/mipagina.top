@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tu Tienda Online Lista para Vender | TiendaNube</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, #a78bfa, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .card-shine {
+      background: linear-gradient(135deg, #1e1b4b 0%, #1e1035 100%);
+      border: 1px solid rgba(167, 139, 250, 0.2);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-shine:hover {
+      transform: translateY(-6px);
+      border-color: rgba(167, 139, 250, 0.6);
+      box-shadow: 0 20px 40px rgba(167, 139, 250, 0.15);
+    }
+    .hero-bg {
+      background: radial-gradient(ellipse at 60% 0%, rgba(124, 58, 237, 0.25) 0%, transparent 65%),
+                  radial-gradient(ellipse at 10% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 55%),
+                  #0f0f1a;
+    }
+    .divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(167, 139, 250, 0.4), transparent);
+    }
+    .benefit-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: background 0.3s ease;
+    }
+    .benefit-card:hover {
+      background: rgba(167, 139, 250, 0.08);
+    }
+    .cta-btn {
+      background: linear-gradient(135deg, #7c3aed, #ec4899);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .cta-btn:hover {
+      opacity: 0.9;
+      transform: scale(1.04);
+    }
+    .site-preview {
+      background: #1a1a2e;
+      border-radius: 8px 8px 0 0;
+    }
+    .browser-bar {
+      background: #2a2a3e;
+      border-radius: 8px 8px 0 0;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #fff;
+      height: 280px;
+    }
+    .iframe-wrapper iframe {
+      width: 160%;
+      height: 160%;
+      border: none;
+      transform: scale(0.625);
+      transform-origin: top left;
+      pointer-events: none;
+    }
+    .iframe-overlay {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="hero-bg text-white antialiased">
+
+  <!-- ===== HEADER / HERO ===== -->
+  <header class="min-h-screen flex flex-col items-center justify-center text-center px-6 py-20">
+    <span class="inline-block bg-purple-900/50 border border-purple-700/60 text-purple-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase">
+      Para emprendedores que no quieren complicarse
+    </span>
+    <h1 class="text-5xl md:text-7xl font-black leading-tight max-w-4xl mb-6">
+      Tu tienda online,<br />
+      <span class="gradient-text">lista para vender.</span>
+    </h1>
+    <p class="text-gray-300 text-xl md:text-2xl max-w-2xl mb-10 leading-relaxed">
+      Me encargo de todo: diseño, configuración y puesta en marcha.
+      Vos solo te preocupás de <strong class="text-white">vender</strong>.
+    </p>
+    <a
+      href="https://wa.me/5491112345678?text=%C2%A1Hola!%20Quiero%20armar%20mi%20tienda%20online"
+      target="_blank"
+      class="cta-btn text-white font-bold text-xl md:text-2xl px-10 py-5 rounded-2xl shadow-2xl inline-block"
+    >
+      ¡Quiero mi tienda ahora! 🚀
+    </a>
+    <p class="mt-4 text-gray-500 text-sm">Sin tecnicismos · Sin dolores de cabeza · Con soporte por WhatsApp</p>
+
+    <!-- Scroll indicator -->
+    <div class="mt-20 animate-bounce opacity-50">
+      <svg class="w-6 h-6 mx-auto text-purple-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </header>
+
+  <hr class="divider mx-8" />
+
+  <!-- ===== MIS TRABAJOS ===== -->
+  <section class="py-24 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-black mb-4">Mis <span class="gradient-text">Trabajos</span></h2>
+      <p class="text-gray-400 text-lg max-w-xl mx-auto">
+        Tiendas reales que diseñé y configuré. Hacé clic para verlas en vivo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Tienda 1 -->
+      <div class="card-shine rounded-2xl overflow-hidden">
+        <div class="browser-bar">
+          <span class="dot bg-red-400"></span>
+          <span class="dot bg-yellow-400"></span>
+          <span class="dot bg-green-400"></span>
+          <span class="ml-2 text-gray-400 text-xs truncate">lorediosas.mitiendanube.com</span>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://lorediosas.mitiendanube.com"
+            title="Lore Diosas"
+            loading="lazy"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+          <a href="https://lorediosas.mitiendanube.com" target="_blank" class="iframe-overlay"></a>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-lg text-white">Lore Diosas</h3>
+          <p class="text-gray-400 text-sm mt-1">Moda &amp; accesorios femeninos</p>
+          <a
+            href="https://lorediosas.mitiendanube.com"
+            target="_blank"
+            class="inline-block mt-3 text-purple-400 hover:text-purple-300 text-sm font-semibold transition-colors"
+          >
+            Ver tienda →
+          </a>
+        </div>
+      </div>
+
+      <!-- Tienda 2 -->
+      <div class="card-shine rounded-2xl overflow-hidden">
+        <div class="browser-bar">
+          <span class="dot bg-red-400"></span>
+          <span class="dot bg-yellow-400"></span>
+          <span class="dot bg-green-400"></span>
+          <span class="ml-2 text-gray-400 text-xs truncate">nauticstudio.mitiendanube.com</span>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://nauticstudio.mitiendanube.com"
+            title="Nautic Studio"
+            loading="lazy"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+          <a href="https://nauticstudio.mitiendanube.com" target="_blank" class="iframe-overlay"></a>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-lg text-white">Nautic Studio</h3>
+          <p class="text-gray-400 text-sm mt-1">Náutica &amp; deportes acuáticos</p>
+          <a
+            href="https://nauticstudio.mitiendanube.com"
+            target="_blank"
+            class="inline-block mt-3 text-purple-400 hover:text-purple-300 text-sm font-semibold transition-colors"
+          >
+            Ver tienda →
+          </a>
+        </div>
+      </div>
+
+      <!-- Tienda 3 -->
+      <div class="card-shine rounded-2xl overflow-hidden">
+        <div class="browser-bar">
+          <span class="dot bg-red-400"></span>
+          <span class="dot bg-yellow-400"></span>
+          <span class="dot bg-green-400"></span>
+          <span class="ml-2 text-gray-400 text-xs truncate">loreleyalfajores.mitiendanube.com</span>
+        </div>
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://loreleyalfajores.mitiendanube.com"
+            title="Loreley Alfajores"
+            loading="lazy"
+            sandbox="allow-same-origin allow-scripts"
+          ></iframe>
+          <a href="https://loreleyalfajores.mitiendanube.com" target="_blank" class="iframe-overlay"></a>
+        </div>
+        <div class="p-5">
+          <h3 class="font-bold text-lg text-white">Loreley Alfajores</h3>
+          <p class="text-gray-400 text-sm mt-1">Alfajores &amp; dulces artesanales</p>
+          <a
+            href="https://loreleyalfajores.mitiendanube.com"
+            target="_blank"
+            class="inline-block mt-3 text-purple-400 hover:text-purple-300 text-sm font-semibold transition-colors"
+          >
+            Ver tienda →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider mx-8" />
+
+  <!-- ===== BENEFICIOS ===== -->
+  <section class="py-24 px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl md:text-5xl font-black mb-4">¿Qué incluye <span class="gradient-text">tu tienda</span>?</h2>
+      <p class="text-gray-400 text-lg max-w-xl mx-auto">
+        Todo lo que necesitás para empezar a vender desde el día uno.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+      <div class="benefit-card rounded-2xl p-7 flex gap-5 items-start">
+        <div class="text-4xl">💳</div>
+        <div>
+          <h3 class="font-bold text-xl text-white mb-1">Tu tienda lista para cobrar</h3>
+          <p class="text-gray-400 text-base leading-relaxed">
+            Configuramos los medios de pago para que puedas recibir transferencias, tarjetas y más sin moverte de tu casa.
+          </p>
+        </div>
+      </div>
+
+      <div class="benefit-card rounded-2xl p-7 flex gap-5 items-start">
+        <div class="text-4xl">📦</div>
+        <div>
+          <h3 class="font-bold text-xl text-white mb-1">Configuración de envíos</h3>
+          <p class="text-gray-400 text-base leading-relaxed">
+            Tus clientes eligen cómo recibir sus compras. Nosotros armamos todo para que los envíos funcionen solos.
+          </p>
+        </div>
+      </div>
+
+      <div class="benefit-card rounded-2xl p-7 flex gap-5 items-start">
+        <div class="text-4xl">📱</div>
+        <div>
+          <h3 class="font-bold text-xl text-white mb-1">Diseño que se ve bien en el celular</h3>
+          <p class="text-gray-400 text-base leading-relaxed">
+            La mayoría de la gente compra desde el teléfono. Tu tienda se va a ver perfecta en cualquier pantalla.
+          </p>
+        </div>
+      </div>
+
+      <div class="benefit-card rounded-2xl p-7 flex gap-5 items-start">
+        <div class="text-4xl">💬</div>
+        <div>
+          <h3 class="font-bold text-xl text-white mb-1">Alguien que te responde por WhatsApp</h3>
+          <p class="text-gray-400 text-base leading-relaxed">
+            No te quedás solo. Ante cualquier duda, me escribís y te ayudo. Sin tickets, sin esperar días.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider mx-8" />
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="py-28 px-6 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+        ¿Listo para tener tu<br /><span class="gradient-text">tienda online</span>?
+      </h2>
+      <p class="text-gray-300 text-xl mb-10 leading-relaxed">
+        Escribime ahora y empezamos hoy mismo.<br />Sin vueltas, sin tecnicismos.
+      </p>
+      <a
+        href="https://wa.me/5491112345678?text=%C2%A1Hola!%20Quiero%20armar%20mi%20tienda%20online"
+        target="_blank"
+        class="cta-btn text-white font-bold text-2xl md:text-3xl px-12 py-6 rounded-2xl shadow-2xl inline-block"
+      >
+        ¡Quiero mi tienda ahora! 🚀
+      </a>
+      <p class="mt-6 text-gray-500 text-sm">Respondo en menos de 24 horas · Solo por WhatsApp</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-white/5 py-8 text-center text-gray-600 text-sm">
+    <p>© 2025 mipagina.top · Armado de tiendas TiendaNube</p>
+  </footer>
+
+</body>
+</html>
