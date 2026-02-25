@@ -1,337 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tu Tienda Online Lista para Vender | TiendaNube</title>
-  <meta name="description" content="Armo tu tienda online en TiendaNube de principio a fin. Sin vueltas, sin tecnicismos. Vos enfocate en tu negocio, yo me encargo del resto." />
-  <style>
-    /* ── Reset & base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <title>Tu Página Web Profesional | Luciano · mipagina.top</title>
+  <meta name="description"
+    content="Diseño y desarrollo tu página web o tienda online a medida. Sin vueltas, sin tecnicismos. Vos enfocate en tu negocio, yo me encargo del resto." />
 
-    html { scroll-behavior: smooth; }
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tu Página Web Profesional | Luciano" />
+  <meta property="og:description"
+    content="Diseño y desarrollo páginas web y tiendas online a medida. Sin complicaciones." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mipagina.top" />
+  <link rel="canonical" href="https://mipagina.top" />
 
-    body {
-      background-color: #030712;
-      color: #f1f5f9;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
-    }
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
 
-    img, svg { display: block; }
-    a { text-decoration: none; color: inherit; }
-
-    /* ── Utilities ── */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    .container--narrow { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-
-    .text-center { text-align: center; }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* ── Divider ── */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(124,58,237,.4), transparent);
-      margin: 0 32px;
-    }
-
-    /* ── Section padding ── */
-    .section { padding: 96px 0; }
-
-    /* ── Section label ── */
-    .label {
-      display: block;
-      font-size: .75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: #a78bfa;
-      margin-bottom: 12px;
-    }
-
-    /* ── Headings ── */
-    .heading-xl {
-      font-size: clamp(2.4rem, 7vw, 4.5rem);
-      font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -.02em;
-    }
-    .heading-lg {
-      font-size: clamp(1.9rem, 5vw, 3.2rem);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -.02em;
-    }
-
-    /* ── CTA button ── */
-    .btn-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      background: #7c3aed;
-      color: #fff;
-      font-size: 1.25rem;
-      font-weight: 800;
-      padding: 20px 44px;
-      border-radius: 18px;
-      border: none;
-      cursor: pointer;
-      transition: background .2s, transform .15s;
-      animation: ctaPulse 2.5s ease-in-out infinite;
-    }
-    .btn-cta:hover { background: #6d28d9; transform: translateY(-2px); }
-    .btn-cta--xl { font-size: 1.5rem; padding: 24px 52px; }
-    .btn-cta svg { flex-shrink: 0; }
-
-    @keyframes ctaPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(124,58,237,.5); }
-      50%       { box-shadow: 0 0 0 18px rgba(124,58,237,0); }
-    }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 100px 24px 80px;
-      overflow: hidden;
-    }
-    .hero__blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-    }
-    .hero__blob--1 { width: 500px; height: 500px; background: rgba(109,40,217,.25); top: -150px; left: -150px; }
-    .hero__blob--2 { width: 400px; height: 400px; background: rgba(219,39,119,.18); bottom: -80px; right: -80px; }
-
-    .hero__pill {
-      position: absolute;
-      top: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #111827;
-      border: 1px solid #374151;
-      color: #9ca3af;
-      font-size: .72rem;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 999px;
-      white-space: nowrap;
-      letter-spacing: .05em;
-    }
-    .hero__pill-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #4ade80;
-      animation: blink 1.8s ease-in-out infinite;
-    }
-    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.3;} }
-
-    .hero__body { position: relative; z-index: 1; }
-
-    .hero__subtitle {
-      font-size: 1.2rem;
-      color: #9ca3af;
-      max-width: 600px;
-      margin: 20px auto 40px;
-    }
-    .hero__subtitle strong { color: #e5e7eb; }
-
-    .hero__note { margin-top: 16px; font-size: .85rem; color: #6b7280; }
-
-    .hero__scroll {
-      position: absolute;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: #4b5563;
-      font-size: .72rem;
-    }
-    .hero__scroll svg { animation: bounce .9s ease-in-out infinite alternate; }
-    @keyframes bounce { from{transform:translateY(0);} to{transform:translateY(5px);} }
-
-    /* ── BENEFITS ── */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 16px;
-    }
-    .benefit-card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 20px;
-      padding: 32px;
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      transition: box-shadow .3s;
-    }
-    .benefit-card:hover { box-shadow: 0 0 32px rgba(124,58,237,.3); }
-    .benefit-card__icon {
-      flex-shrink: 0;
-      width: 52px; height: 52px;
-      background: rgba(109,40,217,.25);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-    }
-    .benefit-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
-    .benefit-card p  { font-size: .87rem; color: #9ca3af; line-height: 1.6; }
-
-    /* ── PORTFOLIO ── */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-    }
-    .store-card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: box-shadow .3s, border-color .3s;
-    }
-    .store-card:hover {
-      box-shadow: 0 0 36px rgba(124,58,237,.35);
-      border-color: rgba(124,58,237,.5);
-    }
-    .store-card__preview {
-      position: relative;
-      height: 220px;
-      background: #1f2937;
-      overflow: hidden;
-    }
-    .store-card__preview iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 200%; height: 200%;
-      transform: scale(0.5);
-      transform-origin: top left;
-      border: none;
-      pointer-events: none;
-    }
-    .store-card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-    .store-card__status {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 4px;
-    }
-    .store-card__status-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; }
-    .store-card__status span { font-size: .72rem; font-weight: 600; color: #4ade80; }
-    .store-card h3 { font-size: 1.1rem; font-weight: 700; color: #f9fafb; }
-    .store-card p  { font-size: .85rem; color: #9ca3af; margin-top: 6px; flex: 1; }
-    .store-card__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      margin-top: 16px;
-      font-size: .875rem;
-      font-weight: 600;
-      color: #a78bfa;
-    }
-    .store-card__link svg { transition: transform .2s; }
-    .store-card:hover .store-card__link svg { transform: translateX(4px); }
-
-    /* ── HOW IT WORKS ── */
-    .steps { position: relative; display: flex; flex-direction: column; gap: 32px; }
-    .steps::before {
-      content: '';
-      position: absolute;
-      left: 27px; top: 0; bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #7c3aed, #ec4899, transparent);
-    }
-    .step { display: flex; gap: 24px; align-items: flex-start; }
-    .step__num {
-      flex-shrink: 0;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: #7c3aed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      font-weight: 900;
-      color: #fff;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 4px 20px rgba(124,58,237,.5);
-    }
-    .step__card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 20px;
-      padding: 24px;
-      flex: 1;
-    }
-    .step__card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
-    .step__card p  { font-size: .87rem; color: #9ca3af; }
-
-    /* ── CTA SECTION ── */
-    .cta-section {
-      position: relative;
-      padding: 112px 24px;
-      text-align: center;
-      overflow: hidden;
-    }
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at center, rgba(109,40,217,.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-section__body { position: relative; max-width: 720px; margin: 0 auto; }
-    .cta-section p.hero__subtitle { color: #9ca3af; font-size: 1.1rem; margin: 16px auto 40px; max-width: 520px; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid #111827;
-      padding: 32px 24px;
-      text-align: center;
-      font-size: .82rem;
-      color: #4b5563;
-    }
-
-    /* ── Responsive tweaks ── */
-    @media (max-width: 640px) {
-      .steps::before { display: none; }
-      .btn-cta { font-size: 1.1rem; padding: 18px 32px; }
-      .btn-cta--xl { font-size: 1.2rem; padding: 20px 36px; }
-    }
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+
+  <!-- ── SVG Sprite (hidden) ── -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.514a.5.5 0 0 0 .609.61l5.76-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.25-1.38l-.376-.214-3.9 1.019 1.037-3.786-.232-.389A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </symbol>
+  </svg>
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="navbar__brand">
+      <span class="navbar__brand-icon">M</span>
+      mipagina.top
+    </a>
+    <ul class="navbar__links">
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#trabajos">Trabajos</a></li>
+      <li><a href="#como-funciona">Proceso</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="https://wa.me/541124013957?text=Hola%2C%20quiero%20mi%20p%C3%A1gina%20web%21" target="_blank"
+      rel="noopener noreferrer" class="navbar__cta navbar__cta-desktop">Contactar</a>
+    <button class="navbar__hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
   <!-- ══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════ -->
-  <header class="hero">
+  <header class="hero" id="hero">
     <div class="hero__blob hero__blob--1"></div>
     <div class="hero__blob hero__blob--2"></div>
 
@@ -341,27 +74,21 @@
     </div>
 
     <div class="hero__body">
-      <span class="label">Para emprendedores que no saben de tecnología</span>
+      <span class="label">Para emprendedores y profesionales que necesitan presencia online</span>
       <h1 class="heading-xl">
-        Tu tienda online,<br />
+        Tu página web,<br />
         <span class="gradient-text">lista y funcionando</span>
       </h1>
       <p class="hero__subtitle">
-        Me ocupo de <strong>todo</strong>: diseño, configuración y puesta en marcha
-        de tu tienda en TiendaNube. Vos solo te preocupás por vender.
+        Me ocupo de <strong>todo</strong>: diseño, desarrollo y puesta en marcha
+        de tu página web o tienda online. Vos enfocate en tu negocio.
       </p>
-      <a
-        href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20mi%20tienda%20online%21"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-cta"
-        aria-label="Contactar por WhatsApp"
-      >
-        <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.514a.5.5 0 0 0 .609.61l5.76-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.25-1.38l-.376-.214-3.9 1.019 1.037-3.786-.232-.389A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      <a href="https://wa.me/541124013957?text=Hola%2C%20quiero%20mi%20p%C3%A1gina%20web%21" target="_blank"
+        rel="noopener noreferrer" class="btn-cta btn-whatsapp" aria-label="Contactar por WhatsApp">
+        <svg width="28" height="28">
+          <use href="#icon-whatsapp" />
         </svg>
-        ¡Quiero mi tienda ahora!
+        ¡Quiero mi página ahora!
       </a>
       <p class="hero__note">Sin compromisos · Respondo en menos de 24 h</p>
     </div>
@@ -369,10 +96,53 @@
     <div class="hero__scroll" aria-hidden="true">
       <span>Ver más</span>
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
       </svg>
     </div>
   </header>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       EMPATÍA
+  ══════════════════════════════════════════ -->
+  <section class="empathy" id="empatia">
+    <div class="container">
+      <div class="text-center">
+        <span class="label">Entendemos tu problema</span>
+        <h2 class="heading-lg">
+          ¿Te sentís perdido entre<br />
+          <span class="gradient-text">tutoriales y configuraciones?</span>
+        </h2>
+        <p class="empathy__subtitle">
+          No estás solo. La tecnología no debería ser una barrera para tu negocio.
+          Muchos emprendedores pierden semanas tratando de armar su sitio en lugar de enfocarse en su negocio.
+        </p>
+      </div>
+      <div class="empathy-grid">
+
+        <div class="empathy-card">
+          <div class="empathy-card__icon">😩</div>
+          <div>
+            <h3>Cero estrés técnico</h3>
+            <p>Olvidate de dominios, hosting, DNS y códigos extraños. Yo desarrollo y configuro todo para que funcione
+              desde el primer día.</p>
+          </div>
+        </div>
+
+        <div class="empathy-card">
+          <div class="empathy-card__icon">⏰</div>
+          <div>
+            <h3>Ahorrá tiempo valioso</h3>
+            <p>Mientras yo armo tu sitio web profesional, vos dedicá tu tiempo a hacer crecer tu negocio y atender a tus
+              clientes.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <div class="divider"></div>
 
@@ -393,16 +163,18 @@
         <div class="benefit-card">
           <div class="benefit-card__icon">🛒</div>
           <div>
-            <h3>Tu tienda lista para cobrar</h3>
-            <p>Configuramos los métodos de pago (tarjeta, transferencia, efectivo) para que puedas empezar a vender desde el día uno.</p>
+            <h3>Pagos integrados</h3>
+            <p>Si tu sitio necesita cobrar, configuro los métodos de pago (tarjeta, transferencia, efectivo) para que
+              puedas operar desde el día uno.</p>
           </div>
         </div>
 
         <div class="benefit-card">
           <div class="benefit-card__icon">📦</div>
           <div>
-            <h3>Configuración de envíos</h3>
-            <p>Andreani, OCA, envío propio o retiro en tienda. Todo armado para que tus clientes elijan cómo recibir su pedido.</p>
+            <h3>Funcionalidades a medida</h3>
+            <p>Formularios de contacto, envíos, catálogos, reservas o lo que tu negocio necesite. Todo desarrollado a tu
+              medida.</p>
           </div>
         </div>
 
@@ -410,7 +182,7 @@
           <div class="benefit-card__icon">📱</div>
           <div>
             <h3>Diseño que se ve bien en el celular</h3>
-            <p>Más del 70 % de las compras se hacen desde el teléfono. Tu tienda va a verse perfecta en cualquier pantalla.</p>
+            <p>Más del 70 % del tráfico web viene del celular. Tu sitio se va a ver perfecto en cualquier pantalla.</p>
           </div>
         </div>
 
@@ -418,7 +190,26 @@
           <div class="benefit-card__icon">💬</div>
           <div>
             <h3>Alguien que te responde por WhatsApp</h3>
-            <p>Tenés una duda, me mandás un mensaje. Sin tickets, sin esperas eternas. Soporte real de una persona real.</p>
+            <p>Tenés una duda, me mandás un mensaje. Sin tickets, sin esperas eternas. Soporte real de una persona real.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-card__icon">🎓</div>
+          <div>
+            <h3>Capacitación incluida</h3>
+            <p>Te enseño a manejar tu sitio: actualizar contenido, gestionar pedidos, subir productos. Todo lo que
+              necesitás para ser autónomo.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-card__icon">🎨</div>
+          <div>
+            <h3>Diseño profesional a tu medida</h3>
+            <p>Tu sitio va a reflejar la identidad de tu marca. Colores, tipografía y estilo pensados para tu público.
+            </p>
           </div>
         </div>
 
@@ -429,72 +220,145 @@
   <div class="divider"></div>
 
   <!-- ══════════════════════════════════════════
-       MIS TRABAJOS
+       SHOWCASE
+  ══════════════════════════════════════════ -->
+  <section class="showcase" id="showcase">
+    <div class="container">
+      <div class="showcase__grid">
+        <div>
+          <span class="label">Todo incluido</span>
+          <h2 class="heading-lg">
+            Yo armo tu sitio web,<br />
+            <span class="gradient-text">vos te enfocás en tu negocio</span>
+          </h2>
+          <ul class="showcase__list">
+            <li>
+              <span class="showcase__check">✓</span>
+              Diseño profesional adaptado a tu marca y rubro
+            </li>
+            <li>
+              <span class="showcase__check">✓</span>
+              Tiendas online, sitios corporativos o landing pages
+            </li>
+            <li>
+              <span class="showcase__check">✓</span>
+              Optimizado para celulares (Mobile First)
+            </li>
+            <li>
+              <span class="showcase__check">✓</span>
+              Capacitación incluida para que lo manejes vos
+            </li>
+          </ul>
+        </div>
+        <div class="phone-wrapper">
+          <div class="phone-wrapper__blob phone-wrapper__blob--1"></div>
+          <div class="phone-wrapper__blob phone-wrapper__blob--2"></div>
+          <div class="phone-mockup">
+            <div class="phone-mockup__notch"></div>
+            <div class="phone-mockup__screen">
+              <div class="phone-mockup__header">Tu Sitio Web</div>
+              <div class="phone-mockup__content">
+                <div class="phone-mockup__banner"></div>
+                <div class="phone-mockup__products">
+                  <div class="phone-mockup__product"></div>
+                  <div class="phone-mockup__product"></div>
+                  <div class="phone-mockup__product"></div>
+                  <div class="phone-mockup__product"></div>
+                </div>
+              </div>
+              <div class="phone-mockup__nav">
+                <div class="phone-mockup__nav-dot"></div>
+                <div class="phone-mockup__nav-dot phone-mockup__nav-dot--active"></div>
+                <div class="phone-mockup__nav-dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       CASOS DE ÉXITO
   ══════════════════════════════════════════ -->
   <section id="trabajos" class="section">
     <div class="container">
       <div class="text-center" style="margin-bottom:56px;">
         <span class="label">Resultados reales</span>
-        <h2 class="heading-lg">Mis trabajos</h2>
-        <p style="color:#9ca3af;margin-top:12px;">Tiendas que ya están vendiendo. Hacé clic en cualquiera para verla en vivo.</p>
+        <h2 class="heading-lg">Casos de éxito</h2>
+        <p style="color:#9ca3af;margin-top:12px;">Proyectos web en producción. Hacé clic en cualquiera para verlo en
+          vivo.</p>
       </div>
       <div class="portfolio-grid">
 
         <a href="https://lorediosas.mitiendanube.com" target="_blank" rel="noopener noreferrer" class="store-card">
           <div class="store-card__preview">
-            <iframe src="https://lorediosas.mitiendanube.com" title="Lorediosas" loading="lazy" scrolling="no"></iframe>
+            <img src="assets/web_1.png" alt="Vista previa de Lore Diosas Style" loading="lazy" />
           </div>
           <div class="store-card__body">
-            <div class="store-card__status">
-              <span class="store-card__status-dot"></span>
-              <span>En línea</span>
+            <div class="store-card__meta">
+              <div class="store-card__status">
+                <span class="store-card__status-dot"></span>
+                <span>En línea</span>
+              </div>
+              <span class="store-card__tag">Belleza</span>
             </div>
-            <h3>Lorediosas</h3>
-            <p>Tienda de moda y accesorios con diseño elegante y femenino.</p>
+            <h3>Lore Diosas Style</h3>
+            <p>Tienda de productos y tratamientos capilares: serums, shampoos, acondicionadores y alisados
+              profesionales.</p>
             <span class="store-card__link">
               Ver tienda
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              <svg width="16" height="16">
+                <use href="#icon-arrow" />
               </svg>
             </span>
           </div>
         </a>
 
-        <a href="https://nauticstudio.mitiendanube.com" target="_blank" rel="noopener noreferrer" class="store-card">
+        <a href="https://nauticstudio.xyz" target="_blank" rel="noopener noreferrer" class="store-card">
           <div class="store-card__preview">
-            <iframe src="https://nauticstudio.mitiendanube.com" title="Nautic Studio" loading="lazy" scrolling="no"></iframe>
+            <img src="assets/web_2.png" alt="Vista previa de Nautic Studio" loading="lazy" />
           </div>
           <div class="store-card__body">
-            <div class="store-card__status">
-              <span class="store-card__status-dot"></span>
-              <span>En línea</span>
+            <div class="store-card__meta">
+              <div class="store-card__status">
+                <span class="store-card__status-dot"></span>
+                <span>En línea</span>
+              </div>
+              <span class="store-card__tag">Música</span>
             </div>
             <h3>Nautic Studio</h3>
-            <p>Indumentaria náutica y deportiva con estilo moderno y profesional.</p>
+            <p>Producción musical, mezcla y mastering. Venta de templates de Techno, Peaktime y Trance en MyLoops.</p>
             <span class="store-card__link">
-              Ver tienda
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              Ver sitio
+              <svg width="16" height="16">
+                <use href="#icon-arrow" />
               </svg>
             </span>
           </div>
         </a>
 
-        <a href="https://loreleyalfajores.mitiendanube.com" target="_blank" rel="noopener noreferrer" class="store-card">
+        <a href="https://loreleyalfajores.mitiendanube.com" target="_blank" rel="noopener noreferrer"
+          class="store-card">
           <div class="store-card__preview">
-            <iframe src="https://loreleyalfajores.mitiendanube.com" title="Loreley Alfajores" loading="lazy" scrolling="no"></iframe>
+            <img src="assets/web_3.png" alt="Vista previa de Loreley Alfajores" loading="lazy" />
           </div>
           <div class="store-card__body">
-            <div class="store-card__status">
-              <span class="store-card__status-dot"></span>
-              <span>En línea</span>
+            <div class="store-card__meta">
+              <div class="store-card__status">
+                <span class="store-card__status-dot"></span>
+                <span>En línea</span>
+              </div>
+              <span class="store-card__tag">Gastronomía</span>
             </div>
             <h3>Loreley Alfajores</h3>
             <p>Tienda de alfajores artesanales con un diseño cálido y apetitoso.</p>
             <span class="store-card__link">
               Ver tienda
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              <svg width="16" height="16">
+                <use href="#icon-arrow" />
               </svg>
             </span>
           </div>
@@ -509,7 +373,7 @@
   <!-- ══════════════════════════════════════════
        CÓMO FUNCIONA
   ══════════════════════════════════════════ -->
-  <section class="section">
+  <section class="section" id="como-funciona">
     <div class="container--narrow">
       <div class="text-center" style="margin-bottom:56px;">
         <span class="label">Simple y rápido</span>
@@ -536,10 +400,116 @@
         <div class="step">
           <div class="step__num">3</div>
           <div class="step__card">
-            <h3>Tu tienda está lista para vender</h3>
-            <p>En pocos días tenés tu tienda online funcionando al 100 %. Solo queda empezar a vender.</p>
+            <h3>Tu sitio está listo</h3>
+            <p>En pocos días tenés tu página web funcionando al 100 %. Solo queda enfocarte en tu negocio.</p>
           </div>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       SOBRE MÍ
+  ══════════════════════════════════════════ -->
+  <section class="about" id="sobre-mi">
+    <div class="container">
+      <div class="about__inner">
+        <img src="assets/portrait.jpg" alt="Luciano" class="about__avatar" />
+        <span class="label">Sobre mí</span>
+        <h2 class="heading-lg">Hola, soy Luciano</h2>
+        <p class="about__bio">
+          Soy desarrollador web especializado en e-commerce. Mi objetivo es simple:
+          entregarte un negocio <strong style="color:#e5e7eb;">"llave en mano"</strong>.
+          No te vendo un código, te entrego una herramienta lista para facturar desde el primer día.
+          <br /><br />
+          Me apasiona ver crecer a los emprendedores cuando dejan de preocuparse por la técnica
+          y se enfocan en vender.
+        </p>
+        <div class="about__badges">
+          <div class="about__badge">
+            <span class="about__badge-icon">✅</span>
+            Experiencia comprobada
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-icon">🚀</span>
+            Entrega rápida
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-icon">🤝</span>
+            Soporte personalizado
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════════ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="text-center">
+        <span class="label">Preguntas frecuentes</span>
+        <h2 class="heading-lg">Resolvé tus dudas</h2>
+      </div>
+      <div class="faq__list">
+
+        <details class="faq__item">
+          <summary>¿Cuánto tarda en estar listo mi sitio web?</summary>
+          <div class="faq__answer-wrapper">
+            <div class="faq__answer">
+              Depende de la cantidad de productos y personalizaciones que necesites, pero en general entre
+              <strong style="color:#e5e7eb;">3 a 7 días hábiles</strong> tu sitio está listo para funcionar.
+            </div>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary>¿Necesito saber algo de programación?</summary>
+          <div class="faq__answer-wrapper">
+            <div class="faq__answer">
+              No, para nada. Yo me encargo de toda la parte técnica. Vos solo necesitás tener tu producto,
+              fotos y ganas de crecer. Además, te doy una capacitación para que puedas manejar tu sitio de forma
+              autónoma.
+            </div>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary>¿Con qué tecnologías trabajás?</summary>
+          <div class="faq__answer-wrapper">
+            <div class="faq__answer">
+              Trabajo con diversas plataformas y tecnologías según lo que tu proyecto necesite:
+              <strong style="color:#e5e7eb;">TiendaNube</strong> para e-commerce,
+              desarrollo a medida con HTML/CSS/JS, y más. Elijo la mejor solución para cada caso.
+            </div>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary>¿Qué pasa si necesito cambios después?</summary>
+          <div class="faq__answer-wrapper">
+            <div class="faq__answer">
+              Estoy disponible para hacer ajustes y mejoras. Podés contactarme por WhatsApp cuando necesites,
+              sin tickets ni esperas eternas. Soporte humano y directo.
+            </div>
+          </div>
+        </details>
+
+        <details class="faq__item">
+          <summary>¿Cuánto cuesta el servicio?</summary>
+          <div class="faq__answer-wrapper">
+            <div class="faq__answer">
+              Cada proyecto es diferente, por eso prefiero charlar primero para entender qué necesitás.
+              Mandame un mensaje por WhatsApp y te paso un presupuesto sin compromiso.
+            </div>
+          </div>
+        </details>
 
       </div>
     </div>
@@ -557,21 +527,15 @@
         Arrancá hoy.<br />
         <span class="gradient-text">Sin excusas tecnológicas.</span>
       </h2>
-      <p class="hero__subtitle">Mandame un mensaje y te cuento cómo tener tu tienda online en pocos días.</p>
-      <a
-        href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20mi%20tienda%20online%21"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-cta btn-cta--xl"
-        aria-label="Contactar por WhatsApp"
-      >
-        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.514a.5.5 0 0 0 .609.61l5.76-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.7-.5-5.25-1.38l-.376-.214-3.9 1.019 1.037-3.786-.232-.389A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      <p class="cta-section__text">Mandame un mensaje y te cuento cómo tener tu página web lista en pocos días.</p>
+      <a href="https://wa.me/541124013957?text=Hola%2C%20quiero%20mi%20tienda%20online%21" target="_blank"
+        rel="noopener noreferrer" class="btn-cta btn-cta--xl btn-whatsapp" aria-label="Contactar por WhatsApp">
+        <svg width="32" height="32">
+          <use href="#icon-whatsapp" />
         </svg>
-        ¡Quiero mi tienda ahora!
+        ¡Quiero mi página ahora!
       </a>
-      <p class="hero__note" style="margin-top:20px;">Gratis consultar · Sin compromiso</p>
+      <p class="cta-note">Gratis consultar · Sin compromiso</p>
     </div>
   </section>
 
@@ -579,8 +543,12 @@
        FOOTER
   ══════════════════════════════════════════ -->
   <footer>
-    <p>© 2025 · Tiendas online hechas con dedicación ♥ · Argentina</p>
+    <p>© 2026 · mipagina.top · Páginas web hechas con dedicación ♥ · Argentina</p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
 </body>
+
 </html>
