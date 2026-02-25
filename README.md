@@ -1,26 +1,42 @@
-# 🚀 mipagina.top
+<div align="center">
 
-Professional landing page with **Dark Mode** aesthetics, designed specifically for **TiendaNube** integrations and services.
+<img src="https://nauticstudio.xyz/assets/images/nb-icon.ico" width="80" />
+
+# MIPAGINA.TOP
+
+### *High-end landing page optimized for TiendaNube services*
+
+[![Website](https://img.shields.io/badge/🌐_Website-mipagina.top-FF6B00?style=for-the-badge&labelColor=0D0D0D)](https://mipagina.top)
+[![Instagram](https://img.shields.io/badge/📸_Instagram-@nauticboy.music-E4405F?style=for-the-badge&labelColor=0D0D0D)](https://www.instagram.com/nauticboy.music)
+[![Nautic Studio](https://img.shields.io/badge/🎙️_Studio-Nautic_Studio-26A5E4?style=for-the-badge&labelColor=0D0D0D)](https://nauticstudio.com.ar)
+
+<br/>
+
+<img src="https://nauticstudio.xyz/assets/images/preview-link.jpg" width="720" style="border-radius:12px" />
+
+</div>
+
+<br/>
 
 ---
 
-## ✨ Main features
-* **Modern Design:** Optimised interface in dark mode for a premium visual experience.
-* **Mobile First:** Fully responsive to capture traffic from any device.
-* **SEO Structure:** Clean code to improve search engine ranking.
-* **Automatic Deployment:** Configured with GitHub Pages and custom domain.
+## ✦ About
 
-## 🛠️ Technologies used
-* **HTML5** and **CSS3** (Custom Properties for dark mode).
-* **GitHub Actions** for continuous deployment.
+**mipagina.top** is a professional landing page designed for the integration and promotion of **TiendaNube** services. Developed with a "Dark-first" approach, it focuses on high conversion and a premium visual identity for digital products and services.
 
-## 🌐 View live
-Access the official site here: [https://mipagina.top](https://mipagina.top)
+This project combines systems logic with high-end music production aesthetics, ensuring a seamless user experience across all platforms.
 
----
+<br/>
 
-## 👨‍💻 About the author
-Project developed by **Luciano (Nautic Boy)**, founder of **Nautic Studio**. Combining programming logic with the aesthetics of music production.
+## ✦ Features
 
-* **Studio:** [Nautic Studio](https://nauticstudio.com.ar)
-* **Portfolio:** [Nautic Boy on MyLoops](https://www.myloops.net)
+| Feature | Description |
+|---------|-------------|
+| 🌙 **Dark Mode** | Optimized interface for a premium and modern visual experience |
+| 📱 **Mobile First** | Fully responsive design focused on mobile traffic and accessibility |
+| 🔍 **SEO Ready** | Semantic HTML5 structure for better search engine ranking |
+| 🚀 **CI/CD** | Automated deployment pipeline via GitHub Actions |
+
+<br/>
+
+## ✦ Tech Stack
