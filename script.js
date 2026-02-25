@@ -10,26 +10,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('navbar__links--open');
+      const isOpen = navLinks.classList.toggle('navbar__links--open');
+      hamburger.classList.toggle('navbar__hamburger--active', isOpen);
     });
 
     // Close menu when a link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('navbar__links--open');
+        hamburger.classList.remove('navbar__hamburger--active');
       });
     });
   }
 
-  /* ── Navbar background on scroll ── */
+  /* ── Navbar hide/show on scroll direction ── */
   const navbar = document.getElementById('navbar');
 
   if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(3, 7, 18, .95)';
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      // Add scrolled state for background
+      if (currentScrollY > 50) {
+        navbar.classList.add('navbar--scrolled');
       } else {
-        navbar.style.background = 'rgba(3, 7, 18, .75)';
+        navbar.classList.remove('navbar--scrolled');
+      }
+
+      // Hide/show based on scroll direction (only after 80px)
+      if (currentScrollY > 80) {
+        if (currentScrollY > lastScrollY + 5) {
+          // Scrolling down — hide (only if mobile menu is closed)
+          if (!navLinks || !navLinks.classList.contains('navbar__links--open')) {
+            navbar.classList.add('navbar--hidden');
+          }
+        } else if (currentScrollY < lastScrollY - 5) {
+          // Scrolling up — show
+          navbar.classList.remove('navbar--hidden');
+        }
+      } else {
+        navbar.classList.remove('navbar--hidden');
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateNavbar);
+        ticking = true;
       }
     }, { passive: true });
   }
