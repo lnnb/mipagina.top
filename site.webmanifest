@@ -1,0 +1,21 @@
+{
+  "name": "mipagina.top — Tu Página Web Profesional",
+  "short_name": "mipagina.top",
+  "description": "Diseño y desarrollo de páginas web y tiendas online a medida para emprendedores y negocios en Argentina.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#a78bfa",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/preview.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

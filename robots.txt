@@ -1,0 +1,6 @@
+# robots.txt for mipagina.top
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mipagina.top/sitemap.xml
